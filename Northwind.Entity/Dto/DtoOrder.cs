@@ -1,17 +1,16 @@
 ﻿using Northwind.Entity.Base;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+#nullable disable
 
 namespace Northwind.Entity.Dto
 {
-    public class DtoOrder:DtoBase
+    public partial class DtoOrder : DtoBase
     {
         public DtoOrder()
         {
-           // OrderDetails = new HashSet<OrderDetail>();
+
         }
 
         public int OrderId { get; set; }
@@ -28,7 +27,5 @@ namespace Northwind.Entity.Dto
         public string ShipRegion { get; set; }
         public string ShipPostalCode { get; set; }
         public string ShipCountry { get; set; }
-
-       
     }
 }

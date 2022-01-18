@@ -14,10 +14,10 @@ namespace Northwind.Dal.Abstract
         T Update(T entity);
         T Find(int id);
         List<T> GetAll();
-        IQueryable<T> GetAll(Expression<Func<T,bool>> expression);
+        IQueryable<T> GetAll(Expression<Func<T, bool>> expression);
         bool Delete(int id);
         bool Delete(T entity);
 
-
+        //include dahil edilir getall metod yapısı
     }
 }

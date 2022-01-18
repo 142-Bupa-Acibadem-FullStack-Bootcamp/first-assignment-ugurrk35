@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Northwind.Entity.Base
 {
-    public class EntityBase:IEntityBase
+    public class EntityBase : IEntityBase
     {
     }
 }

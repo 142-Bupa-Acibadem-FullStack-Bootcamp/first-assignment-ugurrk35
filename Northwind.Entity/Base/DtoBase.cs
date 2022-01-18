@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Northwind.Entity.Base
 {
-    public class DtoBase:IDtoBase
+    public class DtoBase : IDtoBase
     {
     }
 }

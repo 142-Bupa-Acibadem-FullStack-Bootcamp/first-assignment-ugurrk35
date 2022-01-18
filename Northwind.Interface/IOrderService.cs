@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Northwind.Interface
 {
-    public interface IOrderService : IGenericService<Order, DtoOrder>
+    public interface IOrderService : IGenericServise<Order, DtoOrder>
     {
         IQueryable OrderReport(int orderId);
     }

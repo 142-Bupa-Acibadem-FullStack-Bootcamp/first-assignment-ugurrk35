@@ -8,9 +8,8 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Northwind.Dal.Concrete.EntityFramework.Repository
+namespace Northwind.Dal.Concrete.Entityframework.Repository
 {
-  
     public class GenericRepository<T> : IGenericRepository<T> where T : EntityBase
     {
         #region Variables
@@ -19,23 +18,20 @@ namespace Northwind.Dal.Concrete.EntityFramework.Repository
         #endregion
 
         #region Constructor
-
         public GenericRepository(DbContext context)
         {
             this.context = context;
             this.dbset = this.context.Set<T>();
-            this.context.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
+            //this.context.ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
         }
         #endregion
 
         #region Methods
-
         public T Add(T entity)
         {
             context.Entry(entity).State = EntityState.Added;
             dbset.Add(entity);
             return entity;
-            
         }
 
         public bool Delete(int id)
@@ -45,25 +41,22 @@ namespace Northwind.Dal.Concrete.EntityFramework.Repository
 
         public bool Delete(T entity)
         {
-           if(context.Entry(entity).State == EntityState.Detached)
+            if(context.Entry(entity).State == EntityState.Detached)
             {
                 context.Attach(entity);
             }
-           return dbset.Remove(entity)!=null;
+            return dbset.Remove(entity)!=null;
             
         }
 
         public T Find(int id)
         {
-            return dbset.Find(id); //veritabanında primary key e göre bakar
+            return dbset.Find(id);
         }
-
-   
 
         public List<T> GetAll()
         {
             return dbset.ToList();
-            
         }
 
         public IQueryable<T> GetAll(Expression<Func<T, bool>> expression)

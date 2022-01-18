@@ -7,13 +7,10 @@ using System.Threading.Tasks;
 
 namespace Northwind.Entity.Dto
 {
-    public class DtoCustomer:DtoBase
+    public class DtoCustomer : DtoBase
     {
-
         public DtoCustomer()
         {
-          //  CustomerCustomerDemos = new HashSet<CustomerCustomerDemo>();
-           // Orders = new HashSet<Order>();
         }
 
         public string CustomerId { get; set; }
@@ -27,8 +24,5 @@ namespace Northwind.Entity.Dto
         public string Country { get; set; }
         public string Phone { get; set; }
         public string Fax { get; set; }
-
-       // public virtual ICollection<CustomerCustomerDemo> CustomerCustomerDemos { get; set; }
-      //  public virtual ICollection<Order> Orders { get; set; }
     }
 }
